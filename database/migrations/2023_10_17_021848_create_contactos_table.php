@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('contactos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('cliente_id');
+            $table->unsignedBigInteger('rol_id');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('mail');
-            $table->string('rol');
             $table->integer('telefono');
             $table->date('fechaNacimiento');
             $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreign('rol_id')->references('id')->on('roles');
             $table->timestamps();
         });
     }

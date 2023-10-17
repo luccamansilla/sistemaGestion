@@ -5,15 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cliente extends Model
+class Roles extends Model
 {
     use HasFactory;
-    protected $table = 'clientes';
+    protected $table = 'roles';
 
-    public function dominios()
-    {
-        return $this->hasMany(Dominio::class);
-    }
     public function contactos()
     {
         return $this->hasMany(Contacto::class);
