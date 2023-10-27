@@ -10,7 +10,7 @@ class Dominio extends Model
 {
     use HasFactory;
     protected $table = 'dominios';
-    protected $fillable = ['telefono'];
+    protected $fillable = ['titular_id', 'cliente_id', 'dueño_id', 'nombre', 'observaciones', 'estado', 'fechaAlta', 'fechaRegistro', 'fechaVencimiento'];
 
     public function historial()
     {

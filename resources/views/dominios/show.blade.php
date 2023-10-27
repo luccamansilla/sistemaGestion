@@ -1,10 +1,10 @@
 <x-app-layout>
     <div class="md:grid grid-cols-1 md:grid-cols-2">
-        <div class="md:grid md:grid-cols-1">
+        <div class="md:grid md:grid-cols-2">
             <h2 class="text-4xl font-extrabold text-black pl-10">Todos los dominios</h2>
         </div>
         <div class="md:grid md:grid-cols-1 px-10">
-            <button><a href="{{ route('dominio.create') }}">Cargar dominio</a></button>
+            <x-buttonClassic class="px-14" href="{{ route('dominio.create') }}">Cargar nuevo dominio</x-buttonClassic>
         </div>
     </div>
     <!-- component -->

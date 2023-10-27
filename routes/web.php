@@ -31,7 +31,7 @@ Route::controller(ClienteController::class)->group(function () {
     Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
         Route::get('cliente/show', 'show')->name('cliente.show');
         Route::get('cliente/create', 'create')->name('cliente.create');
-        // Route::post('dominios/store', 'store')->name('dominio.store');
+        Route::post('cliente/store', 'store')->name('cliente.store');
     });
 });
 

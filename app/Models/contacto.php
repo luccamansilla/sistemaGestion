@@ -9,6 +9,8 @@ class Contacto extends Model
 {
     use HasFactory;
     protected $table = 'contactos';
+    protected $fillable = ['cliente_id', 'rol_id', 'nombre', 'apellido', 'mail', 'telefono', 'fechaNacimiento'];
+
 
     public function cliente()
     {

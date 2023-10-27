@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->string('mail');
-            $table->integer('telefono');
+            $table->bigInteger('telefono');
             $table->date('fechaNacimiento');
             $table->foreign('cliente_id')->references('id')->on('clientes');
             $table->foreign('rol_id')->references('id')->on('roles');
