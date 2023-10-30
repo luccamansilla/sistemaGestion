@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('dni');
             $table->bigInteger('telefono');
             $table->string('cuil');
+            $table->string('estado');
             $table->timestamps();
         });
     }

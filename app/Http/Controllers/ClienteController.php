@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\Contacto;
 use App\Models\Roles;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,13 @@ class ClienteController extends Controller
     {
         $roles = Roles::all();
         return view('clientes.create', compact('roles'));
+    }
+    public function edit($idCliente)
+    {
+        $cliente = Cliente::find($idCliente);
+        $contactos = Contacto::where('cliente_id', $idCliente)->get();
+        $roles = Roles::all();
+        return view('clientes.edit', compact('roles', 'contactos', 'cliente'));
     }
 
     public function store(Request $request, ContactoController $contactoController)
@@ -50,7 +58,7 @@ class ClienteController extends Controller
             'estado' => $request->estado,
         ]);
         $cliente->save();
-        //TO DO -- verificacion que tenga al menos uno
+        //verificacion que tenga al menos uno
         $contactos = json_decode($request->clientesArray, true);
         if (!empty($contactos)) {
             $contactoController->store($contactos, $cliente->id);

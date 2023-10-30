@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\DominioController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,13 @@ Route::controller(ClienteController::class)->group(function () {
         Route::get('cliente/show', 'show')->name('cliente.show');
         Route::get('cliente/create', 'create')->name('cliente.create');
         Route::post('cliente/store', 'store')->name('cliente.store');
+        Route::get('cliente/edit/{idCliente}', 'edit')->name('cliente.edit');
+    });
+});
+
+Route::controller(ContactoController::class)->group(function () {
+    Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+        Route::post('contacto/update', 'update')->name('contacto.update');
     });
 });
 

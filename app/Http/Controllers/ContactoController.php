@@ -23,4 +23,9 @@ class ContactoController extends Controller
             $Con->save();
         }
     }
+
+    public function update(Request $request)
+    {
+        dd($request);
+    }
 }

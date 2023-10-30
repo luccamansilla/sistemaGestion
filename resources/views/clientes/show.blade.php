@@ -13,7 +13,7 @@
                                     Cliente</x-buttonClassic></a>
                         </div>
                     </div>
-                    <table class="min-w-full ">
+                    <table class="min-w-full">
                         <thead class="bg-white border-b text-center">
                             <tr>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
@@ -54,7 +54,7 @@
                                         {{ $c->razonSocial }}
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        <x-button>Editar</x-button>
+                                        <a href="{{ route('cliente.edit', $c->id) }}"><x-button>Editar</x-button></a>
                                     </td>
                                 </tr>
                             @endforeach

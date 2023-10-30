@@ -1,3 +1,4 @@
+@vite(['resources/js/crearCliente.js']);
 <x-app-layout>
     <form method="POST" action="{{ route('cliente.store') }}" id="idFormulario">
         @csrf
@@ -68,7 +69,6 @@
                         </select>
                     </div>
                     <div class="col-span-2 md:row-span-3 justify-center place-items-center px-4 hidden">
-                        <x-label for="estado">Estado del cliente</x-label>
                         <x-input type="hidden" name="clientesArray" id="idClientesArray"></x-input>
                     </div>
 
@@ -142,6 +142,8 @@
         </div>
     </div>
 </div>
+
+{{--  Estos scripts lo pase a la carpeta public/js/crearCliente.js
 <script>
     const modal_overlay = document.querySelector('#modal_overlay');
     const modal = document.querySelector('#modal');
@@ -204,4 +206,4 @@
         //Mando al formulario el json con el array 
         document.getElementById('idClientesArray').value = JSON.stringify(contactos);
     }
-</script>
+</script> --}}
