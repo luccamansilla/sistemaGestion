@@ -11,6 +11,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -23,7 +24,8 @@
     <x-banner />
 
     <div class="min-h-screen bg-gray-100">
-        @livewire('navigation-menu')
+        {{-- <x-barra-navegacion></x-barra-navegacion> --}}
+        {{-- @livewire('barra-navegacion') --}}
 
         <!-- Page Heading -->
         @if (isset($header))

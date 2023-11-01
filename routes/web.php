@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\DominioController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,12 +44,18 @@ Route::controller(ContactoController::class)->group(function () {
     });
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+Route::controller(Controller::class)->group(function () {
+    Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+        Route::get('dashboard', 'dashboard')->name('dashboard');
+    });
 });
+
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
