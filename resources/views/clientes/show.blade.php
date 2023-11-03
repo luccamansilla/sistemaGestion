@@ -23,13 +23,13 @@
                                     Nombre
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
-                                    Razon Social
+                                    Email
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
                                     Cuil
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
-                                    Fecha de Vencimiento
+                                    Razon Social
                                 </th>
                                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
                                     Acción

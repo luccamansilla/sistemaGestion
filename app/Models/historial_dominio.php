@@ -10,6 +10,8 @@ class Historial_dominio extends Model
     use HasFactory;
     protected $table = 'historial_dominios';
 
+    protected $fillable = ['dominio_id', 'accion', 'usuario'];
+
     public function dominio()
     {
         return $this->belongsTo(Dominio::class);

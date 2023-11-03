@@ -1,4 +1,4 @@
-@vite(['resources/js/editarCliente.js']);
+@vite(['resources/js/editarCliente.js'])
 <x-app-layout>
     <form method="POST" action="" id="idFormulario">
         @csrf
@@ -12,7 +12,7 @@
                         <x-label for="nombre">Nombre del cliente</x-label>
                         <x-input type="text" name="nombre" id="nombre"
                             class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                            placeholder="Ingrese el nombre del dominio" value="{{ $cliente->nombre }}" />
+                            placeholder="Ingrese el nombre del cliente" value="{{ $cliente->nombre }}" />
                     </div>
                     <div class="grid-cols-1 px-4">
                         <x-label for="razonSocial">Razon social</x-label>
@@ -53,7 +53,7 @@
                     <div class="col-span-2 md:row-span-3 justify-center place-items-center px-4">
                         <x-label for="estado">Estado del cliente</x-label>
                         <input type="hidden" id="estadoSeleccionado" value="{{ $cliente->estado }}">
-                        <select name="estado" id="idEstado" class="rounded-lg">
+                        <select name="estado" id="idEstado" class="rounded-lg border-gray-300">
                             <option value="ACTIVO" id="ACTIVO">ACTIVO</option>
                             <option value="PROSPECTO" id="PROSPECTO">PROSPECTO</option>
                             <option value="BAJA PERMANENTE" id="BAJA PERMANENTE">BAJA PERMANENTE</option>

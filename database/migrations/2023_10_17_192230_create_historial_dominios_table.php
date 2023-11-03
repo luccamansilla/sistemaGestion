@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('historial_dominios', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('dominio_id');
-            $table->string('campo');
-            $table->string('valorAnterior');
-            $table->string('nuevoValor');
+            $table->string('accion');
             $table->string('usuario');
             $table->foreign('dominio_id')->references('id')->on('dominios');
             $table->timestamps();

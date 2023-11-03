@@ -1,14 +1,14 @@
 <x-app-layout>
-    <div class="md:grid grid-cols-1 md:grid-cols-2">
-        <div class="md:grid md:grid-cols-2">
+    <div class="grid md:grid-cols-2">
+        <div class="md:grid-cols-1">
             <h2 class="text-4xl font-extrabold text-black pl-10">Todos los dominios</h2>
         </div>
-        <div class="md:grid md:grid-cols-1 px-10">
-            <x-buttonClassic class="px-14" href="{{ route('dominio.create') }}">Cargar nuevo dominio</x-buttonClassic>
+        <div class="md:grid-cols-1 px-10 text-right">
+            <a href="{{ route('dominio.create') }}"><x-buttonClassic>Cargar Dominio</x-buttonClassic></a>
         </div>
     </div>
     <!-- component -->
-    <div class="flex flex-col">
+    <div class="flex flex-col md:grid-cols-2">
         <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
@@ -50,10 +50,10 @@
                                         {{ $d->estado }}
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        {{ $d->fechaVencimiento }}
+                                        {{ date('d/m/y', strtotime($d->fechaVencimiento)) }}
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        <x-button>Editar</x-button>
+                                        <a href="{{ route('dominio.edit', $d->id) }}"><x-button>Editar</x-button></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -63,5 +63,4 @@
             </div>
         </div>
     </div>
-
 </x-app-layout>

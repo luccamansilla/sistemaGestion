@@ -1,10 +1,10 @@
-@vite(['resources/js/crearCliente.js']);
+@vite(['resources/js/crearCliente.js'])
 <x-app-layout>
     <form method="POST" action="{{ route('cliente.store') }}" id="idFormulario">
         @csrf
         <div class="bg-gray-50 flex flex-col justify-center relative overflow-hidden h-full w-full">
             <div class=" bg-white rounded shadow-lg p-4 ">
-                <div class="text-gray-600 col-span-2 pl-6">
+                <div class="text-gray-600 col-span-2 pl-6 pb-4">
                     <p class="font-medium text-4xl">CARGAR CLIENTE</p>
                     <p>Todos los campos son necesarios.</p>
                 </div>
@@ -84,7 +84,6 @@
         </div>
     </form>
 </x-app-layout>
-//MODAL
 <div id="modal_overlay"
     class="hidden absolute inset-0 bg-black bg-opacity-30  w-full justify-center items-start md:items-center pt-10 md:pt-0">
     {{-- modal --}}

@@ -9,6 +9,7 @@ export default defineConfig({
                 "resources/js/app.js",
                 "resources/js/crearCliente.js",
                 "resources/js/editarCliente.js",
+                "resources/js/editarDominio.js",
             ],
             refresh: [...refreshPaths, "app/Livewire/**"],
         }),

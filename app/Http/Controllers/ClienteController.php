@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use App\Models\Contacto;
+use App\Models\Dominio;
 use App\Models\Roles;
 use Illuminate\Http\Request;
 

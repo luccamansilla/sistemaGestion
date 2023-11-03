@@ -4,6 +4,8 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\DominioController;
+use App\Http\Controllers\HistorialDominioController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +28,8 @@ Route::controller(DominioController::class)->group(function () {
         Route::get('dominios/show', 'show')->name('dominio.show');
         Route::get('dominios/create', 'create')->name('dominio.create');
         Route::post('dominios/store', 'store')->name('dominio.store');
+        Route::get('dominios/edit/{idDominio}', 'edit')->name('dominio.edit');
+        Route::post('dominios/update/{dominio}', 'update')->name('dominio.update');
     });
 });
 
@@ -44,11 +48,17 @@ Route::controller(ContactoController::class)->group(function () {
     });
 });
 
+
 Route::controller(Controller::class)->group(function () {
     Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
         Route::get('dashboard', 'dashboard')->name('dashboard');
     });
 });
+
+Route::get('/logout', function () {
+    Auth::logout();
+    return view('welcome');; // Cambia '/' por la ruta a la que deseas redireccionar después del logout
+})->name('cerrarSesion');
 
 // Route::middleware([
 //     'auth:sanctum',

@@ -26,6 +26,17 @@ class ContactoController extends Controller
 
     public function update(Request $request)
     {
-        dd($request);
+        //dd($request);
+        $contacto = Contacto::find($request->idContacto);
+        $contacto->update([
+            'nombre' => $request->nombreCliente,
+            'rol_id' => $request->rolCliente,
+            'apellido' => $request->apellidoCliente,
+            'mail' => $request->mailCliente,
+            'telefono' => $request->telefonoCliente,
+            'fechaNacimiento' => $request->nacimientoCliente,
+        ]);
+        $contacto->save();
+        return redirect()->route('cliente.edit', $request->idCliente);
     }
 }
