@@ -5,7 +5,9 @@ use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\DominioController;
 use App\Http\Controllers\HistorialDominioController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +20,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// CAMBIO DE IDIOMA
+Route::get('locale/{locale}', function (string $locale) {
+    session()->put('locale', $locale);
+    return Redirect::back();
+});
 
 Route::get('/', function () {
     return view('welcome');
